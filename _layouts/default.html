@@ -25,16 +25,49 @@
           padding: 5vh 10vw;
         ">
       {% if page.series != "" and page.series != nil %}
-      <div class="container">
+      <div class="container d-none d-lg-block">
         <div class="row">
           <div class="col-lg-3" style="text-align: center; align-content: center;">
             <h1 style="font-size: 48pt; padding-top: 0pt; font-style: italic;">{{ page.order }}</h1>
             <h1 style="font-size: 15pt; padding-top: 0pt">อนุกรม <b>{{ page.series }}</b></h1>
           </div>
           <div class="col-lg-1 d-flex" style="justify-content: center;">
-            <div class="vr d-lg-block d-none"></div>
+            <div class="vr"></div>
           </div>
           <div class="col-lg-8" style="text-align: center;">
+            <h1 style="font-size: 36pt; padding-top: 0pt">{{ page.title }}</h1>
+            <p>{{ page.subtitle }}</p>
+            <hr class="hr hr-blurry" style="width: 100%; margin-left: auto; margin-right: auto;" />
+            {%- if page.author == "" or page.author == nil -%}
+            ผู้เขียน: ไม่ระบุชื่อผู้เขียน
+            {% else %}
+            ผู้เขียน: {{ page.author }}
+            {% endif %}<br>
+            {%- if page.date == "" or page.date == nil -%}
+            เขียนเมื่อ: ไม่ระบุวันที่
+            {% else %}
+            เขียนเมื่อ:
+            {{ page.date | date: "%-d" }}
+            {% assign m = page.date | date: "%-m" | minus: 1 %}
+            {{ site.data.th.months[m] }}
+            {{ page.date | date: "%Y" | plus: 543 }}
+            {% endif %}
+            <p class="credit" style="
+              font-size: 8pt;
+              font-style: italic;
+              padding-top: 2vh;
+              text-align: center;
+            ">เครดิตภาพ: {{ page.imageCredit }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="container d-lg-none">
+        <div class="row">
+          <div class="col-lg-3" style="text-align: center; align-content: center;">
+            <h1 style="font-size: 48pt; padding-top: 0pt; font-style: italic;">{{ page.order }}</h1>
+            <h1 style="font-size: 15pt; padding-top: 0pt">อนุกรม <b>{{ page.series }}</b></h1>
+          </div>
+          <div class="col-lg-9" style="text-align: center;">
             <h1 style="font-size: 36pt; padding-top: 0pt">{{ page.title }}</h1>
             <p>{{ page.subtitle }}</p>
             <hr class="hr hr-blurry" style="width: 100%; margin-left: auto; margin-right: auto;" />
