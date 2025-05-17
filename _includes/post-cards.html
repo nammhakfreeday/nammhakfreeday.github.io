@@ -47,10 +47,12 @@
                     {% assign m = post.date | date: "%-m" | minus: 1 %}
                     {{ site.data.th.months[m] }}
                     {{ post.date | date: "%Y" | plus: 543 }}<br><br>
+                    {% if post.series != "" and post.series != nil %}
                     <button type="button" class="btn btn-secondary" style="font-size:10pt">
                         {{ post.series }}
                     </button>
                     ตอนที่ {{ post.order }}
+                    {% endif %}
                 </p>
             </div>
         </div>
