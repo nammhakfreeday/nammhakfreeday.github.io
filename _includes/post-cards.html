@@ -1,0 +1,63 @@
+{% if site.categories[include.category].size > 0 %}
+{% for post in site.categories[include.category] %}
+<a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
+<div class="card animate__animated animate__fadeInUp" style="--animation-delay: 0.5s; margin: 2vh 0">
+    <div class="row">
+        <div class="col-md-7 d-md-block d-none" style="align-content: center;">
+            <div class="card-block" style="margin:2vh 0 3vh 2vw;">
+                <h4 class="card-title">
+                    {{post.title}}
+                </h4>
+                <p class="card-text">
+                    {{post.subtitle}}<br>
+                    ผู้เขียน: {{post.author}}<br>
+                    วันที่: {{ post.date | date: "%-d" }}
+                    {% assign m = post.date | date: "%-m" | minus: 1 %}
+                    {{ site.data.th.months[m] }}
+                    {{ post.date | date: "%Y" | plus: 543 }}<br><br>
+                    {% if post.series != "" and post.series != nil %}
+                        อนุกรมที่เกี่ยวข้อง<br>
+                        <button type="button" class="btn btn-secondary" style="font-size:8pt" disabled>
+                            {{ post.series }}
+                        </button>
+                        ตอนที่ {{ post.order }}
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <div class="col-md-5 d-md-block d-none">
+            <img src="{{ post.coverImage }}" alt="" style="max-height: 100%; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 0 0.375rem 0.375rem 0;">
+        </div>
+    </div>
+    <div class="row d-md-none">
+        <div class="col">
+            <img src="{{ post.coverImage }}" alt="" style="height:20vh; width:100%; object-fit: cover; border-radius: 0.375rem 0.375rem 0 0;">
+        </div>
+    </div>
+    <div class="row d-md-none">
+        <div class="col">
+            <div class="card-block" style="margin: 0 5vw 4vh 4vw">
+                <h4 class="card-title">
+                    {{post.title}}
+                </h4>
+                <p class="card-text">
+                    {{post.subtitle}}<br>
+                    ผู้เขียน: {{post.author}}<br>
+                    วันที่: {{ post.date | date: "%-d" }}
+                    {% assign m = post.date | date: "%-m" | minus: 1 %}
+                    {{ site.data.th.months[m] }}
+                    {{ post.date | date: "%Y" | plus: 543 }}<br><br>
+                    <button type="button" class="btn btn-secondary" style="font-size:10pt">
+                        {{ post.series }}
+                    </button>
+                    ตอนที่ {{ post.order }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</a>
+{% endfor %}
+{% else %}
+ไม่พบบทความ
+{% endif %}

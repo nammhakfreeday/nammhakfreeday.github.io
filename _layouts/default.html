@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  {% include header.html %}
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    {% include navbar.html %}
+  </nav>
+  <div class="jumbotron text-center animate__animated animate__fadeInUp" style="
+          background-image: url('{{ page.coverImage }}');
+          background-position: center;
+          background-size: cover;
+          margin-bottom: 5vh;
+        ">
+    <div style="
+          background-color: rgba(0,0,0,0.5);
+          align-content: center;
+          color: #fff;
+          padding: 5vh 10vw;
+        ">
+      {% if page.series != "" and page.series != nil %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3" style="text-align: center; align-content: center;">
+            <h1 style="font-size: 48pt; padding-top: 0pt; font-style: italic;">{{ page.order }}</h1>
+            <h1 style="font-size: 15pt; padding-top: 0pt">อนุกรม <b>{{ page.series }}</b></h1>
+          </div>
+          <div class="col-md-1 d-flex" style="justify-content: center;">
+            <div class="vr d-md-block d-none"></div>
+          </div>
+          <div class="col-md-8" style="text-align: center;">
+            <h1 style="font-size: 36pt; padding-top: 0pt">{{ page.title }}</h1>
+            <p>{{ page.subtitle }}</p>
+            <hr class="hr hr-blurry" style="width: 100%; margin-left: auto; margin-right: auto;" />
+            {%- if page.author == "" or page.author == nil -%}
+            ผู้เขียน: ไม่ระบุชื่อผู้เขียน
+            {% else %}
+            ผู้เขียน: {{ page.author }}
+            {% endif %}<br>
+            {%- if page.date == "" or page.date == nil -%}
+            เขียนเมื่อ: ไม่ระบุวันที่
+            {% else %}
+            เขียนเมื่อ:
+            {{ page.date | date: "%-d" }}
+            {% assign m = page.date | date: "%-m" | minus: 1 %}
+            {{ site.data.th.months[m] }}
+            {{ page.date | date: "%Y" | plus: 543 }}
+            {% endif %}
+            <p class="credit" style="
+              font-size: 8pt;
+              font-style: italic;
+              padding-top: 2vh;
+              text-align: center;
+            ">เครดิตภาพ: {{ page.imageCredit }}</p>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="container">
+        <h1 style="font-size: 36pt; padding-top: 0pt">{{ page.title }}</h1>
+        <p>{{ page.subtitle }}</p>
+        <hr class="hr hr-blurry" style="width: 100%; margin-left: auto; margin-right: auto;" />
+        {%- if page.author == "" or page.author == nil -%}
+        ผู้เขียน: ไม่ระบุชื่อผู้เขียน
+        {% else %}
+        ผู้เขียน: {{ page.author }}
+        {% endif %}<br>
+        {%- if page.date == "" or page.date == nil -%}
+        เขียนเมื่อ: ไม่ระบุวันที่
+        {% else %}
+        เขียนเมื่อ:
+        {{ page.date | date: "%-d" }}
+        {% assign m = page.date | date: "%-m" | minus: 1 %}
+        {{ site.data.th.months[m] }}
+        {{ page.date | date: "%Y" | plus: 543 }}
+        {% endif %}
+        <p class="credit" style="
+          font-size: 8pt;
+          font-style: italic;
+          padding-top: 2vh;
+          text-align: center;
+        ">เครดิตภาพ: {{ page.imageCredit }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <section style="padding-bottom: 5vh;">
+    <div class="container animate__animated animate__fadeInUp" style="--animation-delay: 0.5s; padding-bottom: 5vh">
+      {% if page.toc %}
+      <div class="row">
+        <div class="col-md-4" style="padding-bottom:2vh;">
+          <div class="container sticky-top" style="top: 10vh;">
+            {% if page.series != "" and page.series != nil %}
+            <div class="row">
+              <div class="card d-md-block d-none"
+                style="width: 100%; font-size:10pt; padding-bottom: 2vh; margin-bottom: 2vh;">
+                <div class="card-body">
+                  <h5 class="card-title" style="padding:0">อนุกรม <b>{{ page.series }}</b></h5>
+                  <div class="card-text overflow-auto" id="series-posts" style="max-height: 35vh;">
+                    {% for post in site.posts %}
+                    {% if post.series == page.series %}
+                    {% if page.url == post.url %}
+                    <div class="series-item" data-order="{{post.order}}">{{post.order}}. {{ post.title }}</div>
+                    {% else %}
+                    <div class="series-item" data-order="{{post.order}}">
+                      <a href="{{ post.url }}" style="text-decoration: solid;">{{post.order}}. {{ post.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              <div class="card d-md-none" style="width: 100%; font-size:10pt; padding-bottom: 2vh; margin-bottom: 2vh;">
+                <div class="card-body">
+                  <h5 class="card-title" style="padding:0">อนุกรม <b>{{ page.series }}</b></h5>
+                  <div class="card-text" id="series-posts2">
+                    {% for post in site.posts %}
+                    {% if post.series == page.series %}
+                    {% if page.url == post.url %}
+                    <div class="series-item2" data-order="{{post.order}}">{{post.order}}. {{ post.title }}</div>
+                    {% else %}
+                    <div class="series-item2" data-order="{{post.order}}">
+                      <a href="{{ post.url }}" style="text-decoration: solid;">{{post.order}}. {{ post.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            <div class="row">
+              <div class="card d-md-block d-none" style="width: 100%; font-size:10pt; padding-bottom: 2vh;">
+                <div class="card-body">
+                  <h5 class="card-title" style="padding:0">สารบัญ</h5>
+                  <p class="card-text overflow-auto" style="max-height: 35vh; ">{% toc %}</p>
+                </div>
+              </div>
+              <div class="card d-md-none" style="width: 100%; font-size:10pt; padding-bottom: 2vh;">
+                <div class="card-body">
+                  <h5 class="card-title" style="padding:0">สารบัญ</h5>
+                  <p class="card-text">{% toc %}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          {{ content }}
+        </div>
+      </div>
+      {% else %}
+      <div class="d-none d-md-block" style="padding: 0 10vw">
+        {{ content }}
+      </div>
+      <div class="d-md-none">
+        {{ content }}
+      </div>
+      {% endif %}
+    </div>
+    {% if page.series != "" and page.series != nil %}
+    <div class="container animate__animated animate__fadeInUp" style="--animation-delay: 0.5s">
+      <div class="row">
+        <div class="col-md-6">
+          {% for post in site.posts %}
+          {% assign order_compare = page.order | minus: 1 %}
+          {% if post.series == page.series and post.order == order_compare %}
+          <a href="{{ post.url }}" style="text-decoration: none;">
+          <div class="card navigation" style="height:10vh; justify-content: center; padding: 2%; margin: 2%">
+            <div class="row">
+              <div class="col-1" style="align-content: center;"><i class="bi bi-caret-left-fill"></i></div>
+              <div class="col-11">ก่อนหน้า<br>
+              <b>{{ post.order }}: {{ post.title }}</b></div>
+            </div>
+          </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div class="col-md-6">
+          {% for post in site.posts %}
+          {% assign order_compare = page.order | plus: 1 %}
+          {% if post.series == page.series and post.order == order_compare %}
+          <a href="{{ post.url }}" style="text-decoration: none;">
+          <div class="card navigation" style="height:10vh; justify-content: center; padding: 2%; margin: 2%; text-align: right;">
+            <div class="row">
+              <div class="col-11">ถัดไป<br>
+            <b>{{ post.order }}: {{ post.title }}</b></div>
+              <div class="col-1" style="align-content: center;"><i class="bi bi-caret-right-fill"></i></div>
+            </div>
+          </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </section>
+  <footer style="background-color: #484848">
+    {% include footer.html %}
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  <script>
+    anchors.add();
+    Array.from(
+      document.getElementById("toc").getElementsByTagName("a")
+    ).map((val) => {
+      val.setAttribute(
+        "href",
+        decodeURIComponent(val.getAttribute("href")).substring(0, 65)
+      )
+    });
+    Array.from(document.getElementsByClassName("series-item")).sort((a, b) => {
+      if (parseInt(a.getAttribute("data-order")) > parseInt(b.getAttribute("data-order"))) {
+        return 1
+      } else {
+        return -1
+      }
+    }).forEach(node => document.getElementById('series-posts').appendChild(node));
+    Array.from(document.getElementsByClassName("series-item2")).sort((a, b) => {
+      if (parseInt(a.getAttribute("data-order")) > parseInt(b.getAttribute("data-order"))) {
+        return 1
+      } else {
+        return -1
+      }
+    }).forEach(node => document.getElementById('series-posts2').appendChild(node));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+- name: คณิตศาสตร์
+  link: /mathematics
+  cover: /assets/images/tag_covers/Math.jpg
+  description: นิยามและทฤษฎีบทที่สนใจในสาขาวิชาต่าง ๆ
+- name: ชีววิทยาระบบ
+  link: /systems-biology
+  cover: /assets/images/About.jpg
+  description: เมื่อชีววิทยาถูกมองในฐานะระบบ
+- name: นโยบายสาธารณะ
+  link: /policy-analysis
+  cover: /assets/images/tag_covers/Policy.png
+  description: ทฤษฎีและแนวทางการปฏิบัติในงานนโยบาย
+- name: เบื้องหลังอุปกรณ์
+  link: /instruments
+  cover: /assets/images/tag_covers/Instruments.jpg
+  description: แกะเบื้องหลังอุปกรณ์และเครื่องมือ

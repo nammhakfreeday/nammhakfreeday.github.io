@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap&subset=Latin');
+
+body {
+    font-family: "IBM Plex Serif", "Noto Sans Thai Looped" !important;
+    min-height: 100vh !important;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: #EEE;
+}
+
+img {
+    max-width: 100%;
+    max-height: 50vh;
+    align-self: center;
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+
+figcaption {
+    text-align: center;
+    margin: 0 5vw
+}
+
+.noline {
+    text-decoration: none !important;
+    color: #FFF
+}
+
+details > summary {
+    margin: 1vh 1vw
+}
+
+:root {
+    interpolate-size: allow-keywords;
+}
+
+details {
+    transition: 0.25s;
+    background-color: #F9F9F9;
+    padding: 1vh 1vw;
+    margin: 1vh 0;
+    border-style: solid;
+    border-color: #BBB;
+    border-width: 0.1vh;
+    border-radius: 0.5vh;
+    overflow: hidden;
+}
+
+.navigation {
+    transition: 0.25s;
+}
+
+details::details-content {
+    block-size: 0;
+    transition: block-size 0.25s, content-visibility 0.25s;
+    transition-behavior: allow-discrete;
+}
+
+details:open::details-content {
+    block-size: auto;
+}
+
+details:hover, .navigation:hover {
+  transition: 0.25s;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+details > p {
+    margin: 2vh 1vw
+}
+
+h1, h2, h3 {
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+}
+
+h4, h5, h6 {
+    padding-top: 2vh
+}
+
+blockquote {
+    background-color: #373737;
+    color: #FFF;
+    padding: 3vh 5vw;
+    border-style: solid;
+    border-width: 0 0 0 2vw;
+    border-color: #969696;
+    border-radius: 0.3vh;
+}
+
+ul {
+    padding-left: 1rem !important;
+    margin-left: 0 !important;
+}
+
+.toc-h2, .toc-h3, .toc-h4 {
+    padding-left: 0;
+}
+
+.credit > a {
+    color: #BBB
+}
+
+figcaption > p {
+    margin-bottom: 0.25rem
+}
+
+table {
+    width: 100%
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #686868;
+  color: white;
+}

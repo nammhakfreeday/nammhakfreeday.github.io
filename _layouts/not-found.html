@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ไม่พบหน้าที่คุณค้นหา | {{ site.title }}</title>
+    {% include header.html %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      {% include navbar.html %}
+    </nav>
+    <div class="container" style="padding: 5vh 10vw">
+      {{ content }}
+    </div>
+    <footer style="background-color: #484848;">
+      {% include footer.html %}
+    </footer>
+  </body>
+</html>
