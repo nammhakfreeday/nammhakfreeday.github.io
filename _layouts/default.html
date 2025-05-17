@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+  <meta name="viewport" content="width=device-width; initial-scale=1.0" />
   <title>{{ page.title }} | {{ site.title }}</title>
   {% include header.html %}
 </head>
@@ -174,13 +174,14 @@
           {% assign order_compare = page.order | minus: 1 %}
           {% if post.series == page.series and post.order == order_compare %}
           <a href="{{ post.url }}" style="text-decoration: none;">
-          <div class="card navigation" style="height:10vh; justify-content: center; padding: 2%; margin: 2%">
-            <div class="row">
-              <div class="col-1" style="align-content: center;"><i class="bi bi-caret-left-fill"></i></div>
-              <div class="col-11">ก่อนหน้า<br>
-              <b>{{ post.order }}: {{ post.title }}</b></div>
+            <div class="card navigation" style="height:10vh; justify-content: center; padding: 2%; margin: 2%">
+              <div class="row">
+                <div class="col-1" style="align-content: center;"><i class="bi bi-caret-left-fill"></i></div>
+                <div class="col-11">ก่อนหน้า<br>
+                  <b>{{ post.order }}: {{ post.title }}</b>
+                </div>
+              </div>
             </div>
-          </div>
           </a>
           {% endif %}
           {% endfor %}
@@ -190,13 +191,15 @@
           {% assign order_compare = page.order | plus: 1 %}
           {% if post.series == page.series and post.order == order_compare %}
           <a href="{{ post.url }}" style="text-decoration: none;">
-          <div class="card navigation" style="height:10vh; justify-content: center; padding: 2%; margin: 2%; text-align: right;">
-            <div class="row">
-              <div class="col-11">ถัดไป<br>
-            <b>{{ post.order }}: {{ post.title }}</b></div>
-              <div class="col-1" style="align-content: center;"><i class="bi bi-caret-right-fill"></i></div>
+            <div class="card navigation"
+              style="height:10vh; justify-content: center; padding: 2%; margin: 2%; text-align: right;">
+              <div class="row">
+                <div class="col-11">ถัดไป<br>
+                  <b>{{ post.order }}: {{ post.title }}</b>
+                </div>
+                <div class="col-1" style="align-content: center;"><i class="bi bi-caret-right-fill"></i></div>
+              </div>
             </div>
-          </div>
           </a>
           {% endif %}
           {% endfor %}
@@ -233,6 +236,11 @@
         return -1
       }
     }).forEach(node => document.getElementById('series-posts2').appendChild(node));
+    document.addEventListener('load', function () {
+      var scale = 1 / (window.devicePixelRatio || 1);
+      var content = 'width=device-width, initial-scale=' + scale;
+      document.querySelector('meta[name="viewport"]').setAttribute('content', content)
+    }, false)
   </script>
 </body>
 
