@@ -22,7 +22,7 @@
           background-color: rgba(0,0,0,0.5);
           align-content: center;
           color: #fff;
-          padding: 5vh 10vw;
+          padding: 5vh 0;
         ">
       {% if page.series != "" and page.series != nil %}
       <div class="container d-none d-lg-block">
@@ -37,7 +37,7 @@
           <div class="col-lg-8" style="text-align: center;">
             <h1 style="font-size: 36pt; padding-top: 0pt">{{ page.title }}</h1>
             <p>{{ page.subtitle }}</p>
-            <hr class="hr hr-blurry" style="width: 100%; margin-left: auto; margin-right: auto;" />
+            <hr class="hr hr-blurry" style="margin-left: auto; margin-right: auto;" />
             {%- if page.author == "" or page.author == nil -%}
             ผู้เขียน: ไม่ระบุชื่อผู้เขียน
             {% else %}
@@ -65,12 +65,12 @@
         <div class="row">
           <div class="col-lg-3" style="text-align: center; align-content: center;">
             <h1 style="font-size: 48pt; padding-top: 0pt; font-style: italic;">{{ page.order }}</h1>
-            <h1 style="font-size: 15pt; padding-top: 0pt">อนุกรม <b>{{ page.series }}</b></h1>
+            <h1 style="font-size: 15pt; padding-top: 0pt; width: 50%; margin: auto; padding-bottom: 5vh">อนุกรม <b>{{ page.series }}</b></h1>
           </div>
           <div class="col-lg-9" style="text-align: center;">
             <h1 style="font-size: 36pt; padding-top: 0pt">{{ page.title }}</h1>
             <p>{{ page.subtitle }}</p>
-            <hr class="hr hr-blurry" style="width: 100%; margin-left: auto; margin-right: auto;" />
+            <hr class="hr hr-blurry" style="margin-left: auto; margin-right: auto;" />
             {%- if page.author == "" or page.author == nil -%}
             ผู้เขียน: ไม่ระบุชื่อผู้เขียน
             {% else %}
@@ -98,7 +98,7 @@
       <div class="container">
         <h1 style="font-size: 36pt; padding-top: 0pt">{{ page.title }}</h1>
         <p>{{ page.subtitle }}</p>
-        <hr class="hr hr-blurry" style="width: 100%; margin-left: auto; margin-right: auto;" />
+        <hr class="hr hr-blurry" style="margin-left: auto; margin-right: auto;" />
         {%- if page.author == "" or page.author == nil -%}
         ผู้เขียน: ไม่ระบุชื่อผู้เขียน
         {% else %}
@@ -131,8 +131,7 @@
           <div class="container sticky-top" style="top: 10vh;">
             {% if page.series != "" and page.series != nil %}
             <div class="row">
-              <div class="card d-lg-block d-none"
-                style="width: 100%; font-size:10pt; padding-bottom: 2vh; margin-bottom: 2vh;">
+              <div class="card d-lg-block d-none" style="font-size:10pt; padding-bottom: 2vh; margin-bottom: 2vh;">
                 <div class="card-body">
                   <h5 class="card-title" style="padding:0">อนุกรม <b>{{ page.series }}</b></h5>
                   <div class="card-text overflow-auto" id="series-posts" style="max-height: 35vh;">
@@ -150,7 +149,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card d-lg-none" style="width: 100%; font-size:10pt; padding-bottom: 2vh; margin-bottom: 2vh;">
+              <div class="card d-lg-none" style="font-size:10pt; padding-bottom: 2vh; margin-bottom: 2vh;">
                 <div class="card-body">
                   <h5 class="card-title" style="padding:0">อนุกรม <b>{{ page.series }}</b></h5>
                   <div class="card-text" id="series-posts2">
@@ -171,13 +170,13 @@
             </div>
             {% endif %}
             <div class="row">
-              <div class="card d-lg-block d-none" style="width: 100%; font-size:10pt; padding-bottom: 2vh;">
+              <div class="card d-lg-block d-none" style="font-size:10pt; padding-bottom: 2vh;">
                 <div class="card-body">
                   <h5 class="card-title" style="padding:0">สารบัญ</h5>
                   <p class="card-text overflow-auto" style="max-height: 35vh; ">{% toc %}</p>
                 </div>
               </div>
-              <div class="card d-lg-none" style="width: 100%; font-size:10pt; padding-bottom: 2vh;">
+              <div class="card d-lg-none" style="font-size:10pt; padding-bottom: 2vh;">
                 <div class="card-body">
                   <h5 class="card-title" style="padding:0">สารบัญ</h5>
                   <p class="card-text">{% toc %}</p>
@@ -207,9 +206,10 @@
           {% assign order_compare = page.order | minus: 1 %}
           {% if post.series == page.series and post.order == order_compare %}
           <a href="{{ post.url }}" style="text-decoration: none;">
-            <div class="card navigation" style="height:10vh; justify-content: center; padding: 2%; margin: 2%">
+            <div class="card navigation" style="height: 70pt; width: 100%; justify-content: center; padding: 2vh 5vw; margin: 2vh 0">
               <div class="row">
-                <div class="col-1" style="align-content: center;"><i class="bi bi-caret-left-fill"></i></div>
+                <div class="col-1" style="margin: auto; text-align: center; padding: 0"><i
+                    class="bi bi-caret-left-fill"></i></div>
                 <div class="col-11">ก่อนหน้า<br>
                   <b>{{ post.order }}: {{ post.title }}</b>
                 </div>
@@ -225,12 +225,13 @@
           {% if post.series == page.series and post.order == order_compare %}
           <a href="{{ post.url }}" style="text-decoration: none;">
             <div class="card navigation"
-              style="height:10vh; justify-content: center; padding: 2%; margin: 2%; text-align: right;">
+              style="height: 70pt; width: 100%; justify-content: center; padding: 2vh 5vw; margin: 2vh 0; text-align: right;">
               <div class="row">
                 <div class="col-11">ถัดไป<br>
                   <b>{{ post.order }}: {{ post.title }}</b>
                 </div>
-                <div class="col-1" style="align-content: center;"><i class="bi bi-caret-right-fill"></i></div>
+                <div class="col-1" style="margin: auto; text-align: center; padding: 0"><i
+                    class="bi bi-caret-right-fill"></i></div>
               </div>
             </div>
           </a>
@@ -269,11 +270,16 @@
         return -1
       }
     }).forEach(node => document.getElementById('series-posts2').appendChild(node));
-    document.addEventListener('load', function () {
-      var scale = 1 / (window.devicePixelRatio || 1);
-      var content = 'width=device-width, initial-scale=' + scale;
-      document.querySelector('meta[name="viewport"]').setAttribute('content', content)
-    }, false)
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const links = document.querySelectorAll("a");
+      links.forEach(link => {
+        if (link.textContent.includes("http")) {
+          link.style.wordBreak = "break-all";
+        }
+      });
+    });
+
   </script>
 </body>
 
