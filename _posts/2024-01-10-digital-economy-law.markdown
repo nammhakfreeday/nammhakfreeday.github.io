@@ -5,7 +5,7 @@ subtitle: กรณีศึกษาสหภาพยุโรป สหรา
 description: บทความนี้จึงนำเสนอถึงความเคลื่อนไหวของแต่ละประเทศ ซึ่งยกตัวอย่างกรณีศึกษา 3 กลุ่มประเทศ คือ สหภาพยุโรป สหราชอาณาจักร และสหรัฐอเมริกา
 author: กฤตพัฒน์ รัตนภูผา
 date: 2024-01-10 00:00:00 07:00
-coverImage: /assets/images/cover_law.png
+coverImage: /assets/images/posts_cover/cover_law.png
 imageCredit: (ซ้ายไปขวา) ภาพรัฐสภายุโรปที่เมืองบรัสเซลส์ ประเทศเบลเยียม (<a href="https://unsplash.com/photos/aerial-view-photography-of-room-x_0hW-KaCgI">Link</a>)<br>ภาพสภาผู้แทนราษฎร (House of Commons) แห่งสหราชอาณาจักร (<a href="https://www.flickr.com/photos/uk_parliament/2701153820">Link</a>)<br>ภาพสภาผู้แทนประจำคองเกรส (House of Representatives) วอชิงตันดีซี สหรัฐอเมริกา (<a href="https://commons.wikimedia.org/wiki/File:Korea_President_Park_US_Congress_20130507_06.jpg">Link</a>)
 category: policy-analysis
 series:
@@ -36,7 +36,7 @@ toc: true
 จาก[นิยามของเศรษฐกิจดิจิทัลที่เป็นการผสมแนวคิดระหว่างการประมวลผลดิจิทัลและเศรษฐกิจ](https://en.wikipedia.org/wiki/Digital_economy) ประกอบกับพลวัตของกิจกรรมในเศรษฐศาสตร์ระดับจุลภาคดังที่มีองค์ประกอบสำคัญ คือ ห่วงโซ่อุปทานและผู้บริโภค เรียกโดยรวมว่าระบบนิเวศแพลตฟอร์มดิจิทัล ซึ่งสังเคราะห์ภาพรวมและสรุปจากผู้เขียนอ้างอิงโดยใช้งาน Hein et al. (2019) พบว่าระบบนิเวศแพลตฟอร์มดิจิทัลที่สำคัญประกอบไปด้วยทั้งสิ้น 5 แบบตามภาพที่ 2
 
 <figure>
-  <img src="/assets/images/law_1.png" alt=""/>
+  <img src="/assets/images/posts/law/law_1.png" alt=""/>
   <figcaption>
   
   **ภาพที่ 1** ภาพรวมระบบแพลตฟอร์มดิจิทัล
