@@ -6,6 +6,9 @@
         <div class="col-md-7 d-md-block d-none" style="align-content: center;">
             <div class="card-block" style="margin:2vh 0 3vh 2vw;">
                 <h4 class="card-title">
+                    {% if post.series != "" and post.series != nil %}
+                        {{ post.order }}.
+                    {% endif %}
                     {{post.title}}
                 </h4>
                 <p class="card-text">
@@ -16,11 +19,9 @@
                     {{ site.data.th.months[m] }}
                     {{ post.date | date: "%Y" | plus: 543 }}<br><br>
                     {% if post.series != "" and post.series != nil %}
-                        อนุกรมที่เกี่ยวข้อง<br>
                         <button type="button" class="btn btn-secondary" style="font-size:8pt" disabled>
                             {{ post.series }}
                         </button>
-                        ตอนที่ {{ post.order }}
                     {% endif %}
                 </p>
             </div>
@@ -51,7 +52,6 @@
                     <button type="button" class="btn btn-secondary" style="font-size:10pt">
                         {{ post.series }}
                     </button>
-                    ตอนที่ {{ post.order }}
                     {% endif %}
                 </p>
             </div>
