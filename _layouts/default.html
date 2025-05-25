@@ -41,8 +41,8 @@
             <div class="vr"></div>
           </div>
           <div class="col-lg-8" style="text-align: center;">
-            <h1 style="font-size: 36pt; padding-top: 0pt">{{ page.title }}</h1>
-            <p>{{ page.subtitle }}</p>
+            <h1 style="font-size: 36pt; padding-top: 0pt;">{{ page.title }}</h1>
+            <p style="width: 60%; margin: 0 auto;">{{ page.subtitle }}</p>
             <hr class="hr hr-blurry" style="margin-left: auto; margin-right: auto;" />
             {%- if page.author == "" or page.author == nil -%}
             ผู้เขียน: ไม่ระบุชื่อผู้เขียน
@@ -284,6 +284,18 @@
           link.style.wordBreak = "break-all";
         }
       });
+
+      renderMathInElement(document.body, {
+            // customised options
+            // • auto-render specific keys, e.g.:
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            // • rendering keys, e.g.:
+            throwOnError : false
+        });
+
     });
 
   </script>
