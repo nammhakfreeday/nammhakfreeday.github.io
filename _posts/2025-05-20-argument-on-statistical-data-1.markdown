@@ -410,6 +410,7 @@ in regulatory networks" *Journal of Dynamics and Differential Equations* **25**,
 - Billard, L., Diday, E. (2003) "From the Statistics of Data to the Statistics of Knowledge: Symbolic Data Analysis", *Journal of the American Statistical Association* **98** (462) pp. 470-487.
 - Billard, L., Diday, E. (2003) *Symbolic Data Analysis: Definitions and Examples*.
 - Brito, P., Silva, A. P. D. (2025) "Parametric models for distributional data" *Advances in Data Analysis and Classification*, Springer.
+- Amari, S. (2016) *Information Geometry and Its Applications*, Springer.
 
 นอกจากนี้แล้ว อาจมีข้อมูลในรูปแบบลักษณะอื่นที่เราไม่ได้เขียนไว้ ณ ที่นี้ ซึ่งเราจะรวบรวมมาทีหลังพร้อมเขียนรายละเอียดที่เกี่ยวข้องให้เพียงพอกับความเข้าใจในข้อมูลชุดต่าง ๆ เหล่านั้นในตอนต่อไป
 
