@@ -11,3 +11,10 @@
 - ทฤษฎีและการปฏิบัติที่เกี่ยวข้องนโยบายสาธารณะ
 - คณิตศาสตร์ที่เกี่ยวข้องกับชีววิทยา (Mathematical Biology)
 - คณิตศาสตร์ที่เกี่ยวข้องกับเศรษฐศาสตร์
+
+## Local run
+
+- Ruby 3.3
+- Jekyll, bundler with `gem install bundler jekyll`
+- Install its libraries `bundle install`
+- `bundle exec jekyll serve`
