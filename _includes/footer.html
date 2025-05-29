@@ -2,15 +2,18 @@
     <div class="row">
       <div class="col-md-3" style="align-content: center; min-height: 30vh; max-height: 30vh;">
         <h3>วันว่าง ๆ<br/> จากการทำน้ำหมัก</h3>
-        <img src="/assets/images/Public_Domain_Mark_button.png" style="height:3vh; width: auto;"/>
-        <p style="color:#AAA; font-size:1.2vh; margin-top:0.5vh">เว็บไซต์นี้นับเป็นสมบัติสาธารณะ (พ.ศ. 2568)</p>
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          <img src="/assets/images/CCBY.png" style="height:3vh; width: auto;"/>
+        </a>
+        <p style="color:#AAA; font-size:1.2vh; margin-top:0.5vh; width: 75%">เว็บไซต์นี้สามารถนำผลงานไปใช้ ดัดแปลง ต่อยอดได้ แสวงหาผลกำไรหรือขายได้ แต่ต้องให้เครดิตเจ้าของผลงานและต้องอยู่ภายใต้เงื่อนไขแบบเดียวกันกับใบอนุญาต Creative Commons ของต้นฉบับ
+        <br><br>ว่าง ๆ ชอบทำน้ำหมัก พ.ศ. 2568</p>
       </div>
-      <div class="col-md-4" style="color: #BBB">
+      <div class="col-md-4" style="color: #BBB; padding-bottom: 2vh;">
         หน้าที่คุณอาจสนใจ<br>
         <a class="noline" href="/">หน้าแรก</a><br/>
         <a class="noline" href="/about">เกี่ยวกับ</a>
       </div>
-      <div class="col-md-4" style="color: #BBB">
+      <div class="col-md-4" style="color: #BBB; padding-bottom: 2vh;">
         ประเภทบทความ<br>
         {% for tag in site.data.tag %}
           <a class="noline" href="{{ tag.link }}">{{ tag.name }}</a><br/>
